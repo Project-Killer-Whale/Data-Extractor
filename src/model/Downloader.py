@@ -1,4 +1,6 @@
+from src.entities.File import *
 from os import path
+
 import requests
 
 class Downloader():
@@ -9,4 +11,4 @@ class Downloader():
         request = requests.get(url)
         open(path, 'wb').write(request.content)
 
-        return True
+        return File(ou_path, name, format, None)
