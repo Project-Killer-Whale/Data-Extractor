@@ -2,6 +2,7 @@ from src.entities.Town import *
 
 import openpyxl
 import unidecode
+import pandas
 
 class FileManager():
 
@@ -30,7 +31,7 @@ class FileManager():
         return data
 
     def read_csv_file(file_path, separator):
-        file = open(file_path, 'r')
-        content = file.read()
+        file = pandas.read_csv(file_path, error_bad_lines=False)
+        content = file.head()
         print(content)
-        file.close()
+        #file.close()
