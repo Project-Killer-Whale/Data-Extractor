@@ -23,9 +23,10 @@ def read_files(files):
     beach_file = files["Beach"]
     town_file = files["Town"]
 
-    FileManager.read_csv_file(beach_file.path, Constants.CSV_SEPARATOR)
-    data = FileManager.read_xlsx_file(town_file.path, 3, 8133, [2, 3, 5])
-    #print(data)
+    beaches = FileManager.read_csv_file(beach_file.path, Constants.CSV_SEPARATOR)
+    towns = FileManager.read_xlsx_file(town_file.path, 3, 8133, [2, 3, 5])
+    
+    return (beaches, towns)
 
 def process_files():
     pass
