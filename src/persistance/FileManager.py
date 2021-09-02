@@ -29,5 +29,8 @@ class FileManager():
 
         return data
 
-    def read_csv_file():
-        pass
+    def read_csv_file(file_path, separator):
+        file = open(file_path, 'r')
+        content = file.read()
+        print(content)
+        file.close()

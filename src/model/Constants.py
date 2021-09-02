@@ -15,3 +15,5 @@ class Constants():
 
     FILE_NAME_BEACHES = "Beach_codes" 
     FILE_NAME_TOWNS = "Town_codes"
+
+    CSV_SEPARATOR = ";"
