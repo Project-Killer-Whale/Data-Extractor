@@ -1,0 +1,5 @@
+urllib2
+json
+unidecode
+bs4
+openpyxl
