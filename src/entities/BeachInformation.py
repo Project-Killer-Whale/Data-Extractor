@@ -1,6 +1,7 @@
 class BeachInformation():
     
     def __init__(self):
+        self.id = ""
         self.nombre = ""
         self.municipio = ""
         self.provincia = ""
