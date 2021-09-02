@@ -2,7 +2,8 @@ from src.entities.Town import *
 
 import openpyxl
 import unidecode
-import pandas
+import codecs
+import csv
 
 class FileManager():
 
@@ -31,7 +32,9 @@ class FileManager():
         return data
 
     def read_csv_file(file_path, separator):
-        file = pandas.read_csv(file_path, error_bad_lines=False)
-        content = file.head()
-        print(content)
-        #file.close()
+        with open(file_path, 'r', encoding="latin1", errors="replace") as csv_file:
+            file = csv.reader(csv_file, delimiter = separator)
+        
+            for line in file:
+                content_splitted = line.split()
+                print(line)
