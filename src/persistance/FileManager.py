@@ -1,3 +1,4 @@
+from src.entities.BeachCode import *
 from src.entities.Town import *
 
 import openpyxl
@@ -32,9 +33,12 @@ class FileManager():
         return data
 
     def read_csv_file(file_path, separator):
+        data = []
+
         with open(file_path, 'r', encoding="latin1", errors="replace") as csv_file:
             file = csv.reader(csv_file, delimiter = separator)
         
             for line in file:
-                content_splitted = line.split()
-                print(line)
+                data.append(BeachCode(line[0],line[1],line[4],line[5],line[2],line[3],line[6], line[7]))
+
+        return data
