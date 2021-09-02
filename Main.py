@@ -11,8 +11,8 @@ def main():
     save_data()
 
 def download_files():
-    Downloader.download(Constants.URL_BEACHES_FILE, Constants.DATA_PATH, "Beach_codes", Constants.FILE_TYPE_CSV)
-    Downloader.download(Constants.URL_TOWNS_FILE, Constants.DATA_PATH, "Town_codes", Constants.FILE_TYPE_XLSX)
+    Downloader.download(Constants.URL_BEACHES_FILE, Constants.DATA_PATH, Constants.FILE_NAME_BEACHES, Constants.FILE_TYPE_CSV)
+    Downloader.download(Constants.URL_TOWNS_FILE, Constants.DATA_PATH, Constants.FILE_NAME_TOWNS, Constants.FILE_TYPE_XLSX)
 
 def read_files():
     pass
