@@ -1,4 +1,4 @@
-class FileSaver():
+class FileManager():
 
     def save_data(file):
         file = open(file.path, "w")
@@ -6,4 +6,10 @@ class FileSaver():
         file.close()
 
     def save_file():
+        pass
+
+    def read_file():
+        pass
+
+    def read_csv():
         pass

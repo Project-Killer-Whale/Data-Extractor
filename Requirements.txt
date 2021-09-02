@@ -1,3 +1,4 @@
 unidecode
 bs4
 openpyxl
+requests
