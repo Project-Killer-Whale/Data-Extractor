@@ -11,6 +11,9 @@ class JSONFormatter():
         for object in data:
             result += json.dumps(object.__dict__)
 
+            if object != data[data.__len__() - 1]:
+                result += ","
+
         result += "]"
         
         return result

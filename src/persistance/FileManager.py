@@ -8,9 +8,9 @@ import csv
 
 class FileManager():
 
-    def save_data(file):
-        file = open(file.path, "w")
-        file.write(file.data)
+    def save_data(ou_file):
+        file = open(ou_file.path, "w")
+        file.write(ou_file.data)
         file.close()
 
     def save_file():
