@@ -33,7 +33,6 @@ class JSONFormatter():
             beach_info = json.dumps(beach.beach_information.__dict__)
 
             beach.beach_information = ""
-            print(json.dumps(beach.__dict__))
             result += json.dumps(beach.__dict__)[:-3]
             result += beach_info + "}"
 

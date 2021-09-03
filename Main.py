@@ -54,7 +54,7 @@ def process_files(files):
         beach = Beach(beach_info.id, beach_info, None)
         
         for beach_cod in beaches_codes:
-            if beach_info.nombre == beach_cod.nombre and beach_info.municipio == beach_cod.municipio and beach_info.provincia == beach_cod.provincia:
+            if beach_info.nombre == beach_cod.nombre:
                 beach.beach_code = beach_cod.id
         
         data.append(beach)
