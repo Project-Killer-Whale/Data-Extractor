@@ -20,4 +20,4 @@ class Constants():
     CSV_SEPARATOR = ";"
     
     FIRST_BEACH_INFO = 1
-    LAST_BEACH_INFO = 3200
+    LAST_BEACH_INFO = 3112
