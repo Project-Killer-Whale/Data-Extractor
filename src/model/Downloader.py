@@ -21,11 +21,10 @@ class Downloader():
     def download_beach_info(url, ou_path, name, format, first_beach, last_beach):
         beaches =[]
 
-        counter = first_beach
-        for beach in range(first_beach, last_beach):
-            url = url + str(counter)
+        for id in range(first_beach, last_beach):
+            url = url + str(id)
             response = requests.get(url)
-            print(response, str(counter))
+            print(response, str(id))
 
             html = BeautifulSoup(response.text, 'html.parser')
             html_titles = html.find_all('th')
@@ -37,15 +36,13 @@ class Downloader():
                 for i in range(html_titles.__len__()):
                     data.append(html_bodies[i].text)
             
-                beach = Beach()
-                beach.assign_object(data, counter)
+                beach = BeachInformation()
+                beach.assign_object(data, id)
                 beach.__str__()
                 beaches.append(beach)
             
             else:
                 print("URL no válida: ", url)
-            
-            counter += 1
         
         file = File(ou_path, name, format, JSONFormatter.convert_array_object_to_json(beaches)) 
 
