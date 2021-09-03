@@ -1,3 +1,4 @@
+from types import SimpleNamespace
 import json
 
 class JSONFormatter():
@@ -17,3 +18,6 @@ class JSONFormatter():
         result += "]"
         
         return result
+    
+    def convert_json_to_object(json_string):
+        return json.loads(json_string, object_hook=lambda d: SimpleNamespace(**d))

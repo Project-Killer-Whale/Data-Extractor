@@ -6,7 +6,7 @@ from src.entities.File import *
 
 def main():
     files = download_files()
-    read_files(files)
+    files = read_files(files)
     process_files()
     save_data()
 
@@ -30,11 +30,13 @@ def download_files():
 def read_files(files):
     beach_file = files["Beach"]
     town_file = files["Town"]
+    beach_info_file = files["Beach_info"]
 
     beaches_codes = FileManager.read_csv_file(beach_file.path, Constants.CSV_SEPARATOR)
     towns = FileManager.read_xlsx_file(town_file.path, 3, 8133, [2, 3, 5])
-    
-    return (beaches_codes, towns)
+    beaches_info = FileManager.read_json_file(beach_info_file.path)
+
+    return (beaches_codes, towns, beaches_info)
 
 def process_files():
     pass

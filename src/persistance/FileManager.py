@@ -1,3 +1,5 @@
+from src. entities.BeachInformation import BeachInformation
+from src.persistance.JSONFormatter import JSONFormatter
 from src.entities.BeachCode import *
 from src.entities.Town import *
 
@@ -56,3 +58,16 @@ class FileManager():
             result = file.read()
         
         return result
+    
+    def read_json_file(path):
+        data = []
+        json_result = []
+
+        with open(path, 'r') as file:
+            json_result = JSONFormatter.convert_json_to_object(file.read())
+            for item in json_result:
+                beach = BeachInformation()
+                beach.assign_object_dict(item)
+                data.append(beach)
+
+        return data

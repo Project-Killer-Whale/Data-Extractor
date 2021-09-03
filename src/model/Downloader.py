@@ -37,15 +37,12 @@ class Downloader():
             
                 beach = BeachInformation()
                 beach.assign_object(data, id)
-                #beach.__str__()
                 beaches.append(beach)
             
             else:
                 print("URL no válida: ", url + str(id))
         
-        file = File(ou_path, name, format, JSONFormatter.convert_array_object_to_json(beaches)) 
-        
-        #print(file.path, file.data, file.name)
+        file = File(ou_path, name, format, JSONFormatter.convert_array_object_to_json(beaches))
 
         FileManager.save_data(file)
 
