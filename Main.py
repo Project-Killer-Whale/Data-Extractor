@@ -14,8 +14,8 @@ def download_files():
 
     beach_file = Downloader.download(Constants.URL_BEACHES_FILE, Constants.DATA_PATH, Constants.FILE_NAME_BEACHES, Constants.FILE_TYPE_CSV)
     town_file = Downloader.download(Constants.URL_TOWNS_FILE, Constants.DATA_PATH, Constants.FILE_NAME_TOWNS, Constants.FILE_TYPE_XLSX)
-
-    files = {"Beach": beach_file, "Town": town_file}
+    beach_info_file = Downloader.download_beach_info(Constants.URL_BEACHES_INFORMATION, Constants.DATA_PATH, Constants.FILE_NAME_BEACH_INFO, Constants.FILE_TYPE_JSON)
+    files = {"Beach": beach_file, "Town": town_file, "Beach_info": beach_info_file}
 
     return files
 

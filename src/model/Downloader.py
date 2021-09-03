@@ -1,3 +1,5 @@
+from src.persistance.JSONFormatter import *
+from src.persistance.FileManager import *
 from src.entities.Beach import *
 from src.entities.File import *
 from bs4 import BeautifulSoup
@@ -44,5 +46,9 @@ class Downloader():
                 print("URL no válida: ", url)
             
             counter += 1
+        
+        file = File(ou_path, name, format, JSONFormatter.convert_array_object_to_json(beaches)) 
 
-        return File(ou_path, name, format, beaches)
+        FileManager.save_data(file)
+
+        return file
