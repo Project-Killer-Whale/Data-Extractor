@@ -39,6 +39,7 @@ class Downloader():
             
                 beach = Beach()
                 beach.assign_object(data, counter)
+                beach.__str__()
                 beaches.append(beach)
             
             else:
@@ -46,4 +47,4 @@ class Downloader():
             
             counter += 1
 
-        return beaches
+        return File(ou_path, name, format, beaches)
