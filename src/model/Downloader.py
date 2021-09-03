@@ -23,7 +23,7 @@ class Downloader():
 
         counter = first_beach
         for beach in range(first_beach, last_beach):
-            url = url + counter
+            url = url + str(counter)
             response = requests.get(url)
             print(response, str(counter))
 
