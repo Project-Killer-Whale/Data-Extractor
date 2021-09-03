@@ -17,3 +17,6 @@ class Constants():
     FILE_NAME_TOWNS = "Town_codes"
 
     CSV_SEPARATOR = ";"
+    
+    FIRST_BEACH_INFO = 1
+    LAST_BEACH_INFO = 3200
