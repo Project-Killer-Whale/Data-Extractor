@@ -5,6 +5,7 @@ import openpyxl
 import unidecode
 import codecs
 import csv
+import os
 
 class FileManager():
 
@@ -13,8 +14,13 @@ class FileManager():
         file.write(ou_file.data)
         file.close()
 
-    def save_file():
-        pass
+    def check_if_exists(path):
+        return os.path.exists(path)
+
+    def create_dir(parent_path, name):
+        path = parent_path + name
+        os.mkdir(path) 
+        return path
 
     def read_xlsx_file(file_path, first_row, last_row, columns):
         data = []
