@@ -62,7 +62,7 @@ def process_files(files):
     return data
 
 def save_data(data):
-    print(data[0])
-    FileManager.save_data(File(Constants.OU_PATH, Constants.FILE_NAME_OUTPUT, Constants.FILE_TYPE_JSON, JSONFormatter.convert_array_object_to_json(data)))
+    print(data[0].beach_information.id)
+    FileManager.save_data(File(Constants.OU_PATH, Constants.FILE_NAME_OUTPUT, Constants.FILE_TYPE_JSON, JSONFormatter.serialize_beaches(data)))
 
 main()

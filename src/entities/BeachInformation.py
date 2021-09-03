@@ -1,6 +1,7 @@
+from src.entities.Beach import *
 import unidecode
 
-class BeachInformation():
+class BeachInformation(Beach):
     
     def __init__(self):
         self.id = ""
@@ -171,64 +172,4 @@ class BeachInformation():
             self.zona_submarinismo = unidecode.unidecode(data[50])
             self.zona_practica_de_surf = unidecode.unidecode(data[51])
             self.zona_infantil = unidecode.unidecode(data[52])
-            self.zona_deportiva = unidecode.unidecode(data[53])
-        
-    def __str__(self):
-        print(
-        self.id,
-        self.beach_id,
-        self.nombre,
-        self.town_code,
-        self.municipio,
-        self.provincia,
-        self.comunidad_autonoma,
-        self.longitud,
-        self.anchura,
-        self.grado_ocupacion,
-        self.grado_urbanizacion,
-        self.paseo_maritimo,
-        self.fachada_litoral,
-        self.descripcion,
-        self.composicion,
-        self.tipo_arena,
-        self.condiciones,
-        self.zona_fondeo,
-        self.nudismo,
-        self.vegetacion,
-        self.espacio_protegido,
-        self.actuaciones,
-        self.bandera_azul,
-        self.nombre_hospital,
-        self.direccion,
-        self.telefono_hospital,
-        self.distancia_aproximada_a_playa,
-        self.forma_de_acceso,
-        self.senalizacion_de_los_accesos,
-        self.acceso_discapacitados,
-        self.coordenadas ,
-        self.coordenadas_utm,
-        self.senalizacion_de_peligro,
-        self.auxilio_y_salvamento,
-        self.carretera_mas_proxima,
-        self.autobus,
-        self.aparcamiento,
-        self.nombre_puerto,
-        self.distancia_aproximada_a_puerto,
-        self.aseos,
-        self.lavapies,
-        self.duchas,
-        self.papeleras,
-        self.servicio_limpieza,
-        self.oficina_turismo,
-        self.telefono,
-        self.establecimiento_comida,
-        self.establecimiento_bebida,
-        self.alquiler_hamacas,
-        self.alquiler_sombrillas,
-        self.alquiler_nauticos,
-        self.club_nautico,
-        self.zona_submarinismo,
-        self.zona_practica_de_surf,
-        self.zona_infantil,
-        self.zona_deportiva
-        )
+            self.zona_deportiva = unidecode.unidecode(data[53])        

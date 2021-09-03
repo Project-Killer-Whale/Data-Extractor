@@ -11,13 +11,5 @@ class BeachCode():
         self.longitud = longitud
 
     def __str__(self):
-        print(
-            "ID:\t", self.id,
-            "NOMBRE:\t", self.nombre,
-            "ID MUNICIPIO:\t", self.id_municipio,
-            "MUNICIPIO:\t", self.municipio,
-            "ID PROVINCIA:\t", self.id_provincia,
-            "PROVINCIA:\t", self.provincia,
-            "LATITUD:\t", self.latitud,
-            "LONGITUD:\t", self.longitud,
-            )
+        return "ID:", self.id + " " + "NOMBRE:" + " " + self.nombre + " " + "ID MUNICIPIO:" + " " + self.id_municipio + " " + "MUNICIPIO:" + " " + self.municipio + " " + "ID PROVINCIA:" + " " + self.id_provincia + " " + "PROVINCIA:" + " " + self.provincia + " " + "LATITUD:" + " " + self.latitud + " " + "LONGITUD:" + " " + self.longitud
+        
