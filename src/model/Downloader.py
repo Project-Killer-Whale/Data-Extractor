@@ -17,15 +17,13 @@ class Downloader():
         return File(ou_path, name, format, None)
 
     def download_beach_info(url, ou_path, name, format, first_beach, last_beach):
-        path = ou_path + name + format
-
         beaches =[]
 
         counter = first_beach
         for beach in range(first_beach, last_beach):
-
-            response = requests.get(url + counter)
-            print(response)
+            url = url + counter
+            response = requests.get(url)
+            print(response, str(counter))
 
             html = BeautifulSoup(response.text, 'html.parser')
             html_titles = html.find_all('th')
