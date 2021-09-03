@@ -48,3 +48,11 @@ class FileManager():
                 data.append(BeachCode(line[0],line[1],line[4],line[5],line[2],line[3],line[6], line[7]))
 
         return data
+
+    def read_txt_file(path):
+        result = ""
+        
+        with open(path, 'r') as file:
+            result = file.read()
+        
+        return result
