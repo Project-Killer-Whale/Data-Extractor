@@ -4,6 +4,7 @@ class BeachInformation():
     
     def __init__(self):
         self.id = ""
+        self.beach_id = ""
         self.nombre = ""
         self.municipio = ""
         self.provincia = ""
@@ -57,6 +58,7 @@ class BeachInformation():
         self.zona_practica_de_surf = ""
         self.zona_infantil = ""
         self.zona_deportiva = ""
+        self.town_code = ""
     
     def assign_object_dict(self, data):
             self.id = data.id
@@ -174,7 +176,9 @@ class BeachInformation():
     def __str__(self):
         print(
         self.id,
+        self.beach_id,
         self.nombre,
+        self.town_code,
         self.municipio,
         self.provincia,
         self.comunidad_autonoma,

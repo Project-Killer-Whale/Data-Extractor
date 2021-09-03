@@ -7,8 +7,8 @@ from src.entities.File import *
 def main():
     files = download_files()
     files = read_files(files)
-    process_files()
-    save_data()
+    data = process_files(files)
+    save_data(data)
 
 def download_files():
 
@@ -38,10 +38,31 @@ def read_files(files):
 
     return (beaches_codes, towns, beaches_info)
 
-def process_files():
-    pass
+def process_files(files):
+    data = []
 
-def save_data():
-    pass
+    beaches_codes = files[0]
+    towns_codes = files[1]
+    beaches_info = files[2]
+
+    for beach_info in beaches_info:
+        
+        for town in towns_codes:
+            if beach_info.municipio == town.name:
+                beach_info.town_code = town.cod
+        
+        beach = Beach(beach_info.id, beach_info, None)
+        
+        for beach_cod in beaches_codes:
+            if beach_info.nombre == beach_cod.nombre and beach_info.municipio == beach_cod.municipio and beach_info.provincia == beach_cod.provincia:
+                beach.beach_code = beach_cod.id
+        
+        data.append(beach)
+    
+    return data
+
+def save_data(data):
+    print(data[0])
+    FileManager.save_data(File(Constants.OU_PATH, Constants.FILE_NAME_OUTPUT, Constants.FILE_TYPE_JSON, JSONFormatter.convert_array_object_to_json(data)))
 
 main()
